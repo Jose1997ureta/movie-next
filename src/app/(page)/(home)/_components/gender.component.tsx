@@ -83,9 +83,31 @@ export const GenderHomeComponent = () => {
 	};
 
 	return (
-		<div className="mt-5">
+		<div className="mt-5 px-5 lg:px-10 py-5">
 			{loading ? (
-				<p className="text-white">laoding</p>
+				<div
+					className="grid gap-4"
+					style={{
+						gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
+					}}
+				>
+					<div
+						className=" rounded-md h-36 bg-slate-900/50"
+						onClick={handleClickMore}
+					></div>
+					<div
+						className=" rounded-md h-36 bg-slate-900/50"
+						onClick={handleClickMore}
+					></div>
+					<div
+						className=" rounded-md h-36 bg-slate-900/50"
+						onClick={handleClickMore}
+					></div>
+					<div
+						className=" rounded-md h-36 bg-slate-900/50"
+						onClick={handleClickMore}
+					></div>
+				</div>
 			) : genderData.length === 0 ? null : (
 				<>
 					<div className="flex items-center gap-x-2 cursor-pointer mb-3">

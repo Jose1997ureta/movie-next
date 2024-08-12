@@ -7,13 +7,14 @@ import { genderService } from "../service/gender.service";
 export const ListGenderMovie = () => {
 	const router = useRouter();
 	const query = useSearchParams();
-	const [loading, setLoading] = useState<boolean>(true);
+	const [loading, setLoading] = useState<boolean>(false);
 	const [data, setData] = useState<any[]>([]);
 
 	const search = query.get("query");
 
 	const loadGender = useCallback(async () => {
 		try {
+			setLoading(true);
 			const { rpta, error } = await genderService.getGender();
 
 			if (error) return console.log(error);
@@ -51,21 +52,29 @@ export const ListGenderMovie = () => {
 		[search]
 	);
 
-	return loading ? (
-		<p className="text-white">Loading Gender</p>
-	) : (
-		<div className="overflow-x-auto">
-			<div className="flex items-center gap-x-3">
-				{data.map((el) => (
+	return (
+		<div className="flex flex-wrap items-center gap-3">
+			{loading ? (
+				<>
+					<div className="bg-slate-900/50 rounded-2xl py-1 px-5 cursor-pointer flex-shrink-0 w-[100px] h-[34px]"></div>
+					<div className="bg-slate-900/50 rounded-2xl py-1 px-5 cursor-pointer flex-shrink-0 w-[100px] h-[34px]"></div>
+					<div className="bg-slate-900/50 rounded-2xl py-1 px-5 cursor-pointer flex-shrink-0 w-[100px] h-[34px]"></div>
+					<div className="bg-slate-900/50 rounded-2xl py-1 px-5 cursor-pointer flex-shrink-0 w-[100px] h-[34px]"></div>
+					<div className="bg-slate-900/50 rounded-2xl py-1 px-5 cursor-pointer flex-shrink-0 w-[100px] h-[34px]"></div>
+					<div className="bg-slate-900/50 rounded-2xl py-1 px-5 cursor-pointer flex-shrink-0 w-[100px] h-[34px]"></div>
+					<div className="bg-slate-900/50 rounded-2xl py-1 px-5 cursor-pointer flex-shrink-0 w-[100px] h-[34px]"></div>
+				</>
+			) : (
+				data.map((el) => (
 					<div
 						key={el.id}
-						className={`border border-white rounded-2xl py-1 px-5 cursor-pointer ${
+						className={`border border-white rounded-2xl py-1 px-5 cursor-pointer flex-shrink-0 ${
 							isActive(el.key_gender) === el.key_gender ? "bg-white" : ""
 						}`}
 						onClick={() => handleFilter(el.key_gender)}
 					>
 						<p
-							className={`text-base text-nowrap ${
+							className={`text-base  ${
 								isActive(el.key_gender) === el.key_gender
 									? "font-medium text-slate-900"
 									: "text-white"
@@ -74,8 +83,8 @@ export const ListGenderMovie = () => {
 							{el.name}
 						</p>
 					</div>
-				))}
-			</div>
+				))
+			)}
 		</div>
 	);
 };

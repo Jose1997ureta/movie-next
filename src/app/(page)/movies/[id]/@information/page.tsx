@@ -1,7 +1,7 @@
 "use client";
 
 import { CardMovie } from "@/app/_shared/components/movie/card-movie";
-import { movieHome } from "@/app/_shared/constants/data";
+
 import { useCallback, useEffect, useState } from "react";
 import { movieService } from "../../service/movie.service";
 
@@ -88,7 +88,7 @@ export default function MovieIDInformationPage({ params }: Props) {
 								width={240}
 								height={350}
 								img={el.image}
-								className="h-[350px] flex-shrink-0 w-[240px] cursor-pointer"
+								className="h-[350px] flex-shrink-0 cursor-pointer"
 							/>
 						))}
 					</div>

@@ -76,7 +76,7 @@ export const MovieGroup = ({ el }: Props) => {
 							width={240}
 							height={350}
 							img={el.image}
-							className="h-[350px] flex-shrink-0 w-[240px] cursor-pointer"
+							className="h-[350px] flex-shrink-0 cursor-pointer"
 						/>
 					))}
 				</div>

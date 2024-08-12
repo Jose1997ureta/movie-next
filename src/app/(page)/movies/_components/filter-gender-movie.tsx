@@ -51,18 +51,18 @@ export const FilterGenderMovie = () => {
 			>
 				{loading ? (
 					<>
-						<div className="w-[240px] h-[350px] bg-slate-50/10"></div>
-						<div className="w-[240px] h-[350px] bg-slate-50/10"></div>
-						<div className="w-[240px] h-[350px] bg-slate-50/10"></div>
-						<div className="w-[240px] h-[350px] bg-slate-50/10"></div>
-						<div className="w-[240px] h-[350px] bg-slate-50/10"></div>
-						<div className="w-[240px] h-[350px] bg-slate-50/10"></div>
-						<div className="w-[240px] h-[350px] bg-slate-50/10"></div>
-						<div className="w-[240px] h-[350px] bg-slate-50/10"></div>
-						<div className="w-[240px] h-[350px] bg-slate-50/10"></div>
-						<div className="w-[240px] h-[350px] bg-slate-50/10"></div>
-						<div className="w-[240px] h-[350px] bg-slate-50/10"></div>
-						<div className="w-[240px] h-[350px] bg-slate-50/10"></div>
+						<div className="h-[350px] bg-slate-50/10"></div>
+						<div className="h-[350px] bg-slate-50/10"></div>
+						<div className="h-[350px] bg-slate-50/10"></div>
+						<div className="h-[350px] bg-slate-50/10"></div>
+						<div className="h-[350px] bg-slate-50/10"></div>
+						<div className="h-[350px] bg-slate-50/10"></div>
+						<div className="h-[350px] bg-slate-50/10"></div>
+						<div className="h-[350px] bg-slate-50/10"></div>
+						<div className="h-[350px] bg-slate-50/10"></div>
+						<div className="h-[350px] bg-slate-50/10"></div>
+						<div className="h-[350px] bg-slate-50/10"></div>
+						<div className="h-[350px] bg-slate-50/10"></div>
 					</>
 				) : data.length === 0 ? (
 					<div>

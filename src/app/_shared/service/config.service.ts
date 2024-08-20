@@ -7,7 +7,7 @@ const headerConfig = {
 
 export const httpConfig = () => {
 	const axiosC = axios.create({
-		baseURL: "http://localhost:1234",
+		baseURL: import.meta.env.BASE_URL,
 		headers: {
 			...headerConfig,
 		},

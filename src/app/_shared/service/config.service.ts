@@ -7,7 +7,7 @@ const headerConfig = {
 
 export const httpConfig = () => {
 	const axiosC = axios.create({
-		baseURL: import.meta.env.BASE_URL,
+		baseURL: process.env.NEXT_PUBLIC_API_URL,
 		headers: {
 			...headerConfig,
 		},
